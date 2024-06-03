@@ -46,6 +46,7 @@ export interface Task extends UnscheduledTask {
   // todo: should be parsedStartTime to highlight that this doesn't change
   startTime: Moment;
   startMinutes: number;
+  wrapper?: boolean;
 }
 
 export interface TasksForDay {

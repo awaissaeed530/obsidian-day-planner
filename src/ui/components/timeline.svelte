@@ -15,6 +15,7 @@
   import LocalTimeBlock from "./local-time-block.svelte";
   import Needle from "./needle.svelte";
   import RemoteTimeBlock from "./remote-time-block.svelte";
+  import WrapperTimeBlock from "./wrapper-time-block.svelte";
   import ScheduledTaskContainer from "./scheduled-task-container.svelte";
 
   // TODO: showRuler or add <slot name="left-gutter" />
@@ -58,6 +59,8 @@
     {#each $displayedTasks.withTime as task (getRenderKey(task))}
       {#if task.calendar}
         <RemoteTimeBlock {task} />
+      {:else if task.wrapper}
+        <WrapperTimeBlock {task} />
       {:else}
         <LocalTimeBlock
           gripCursor={$cursor.gripCursor}

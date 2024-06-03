@@ -36,5 +36,5 @@
   {task}
   on:mouseup
 >
-  <slot/>
+  <slot />
 </TimeBlockBase>

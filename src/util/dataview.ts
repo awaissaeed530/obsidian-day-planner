@@ -92,6 +92,7 @@ export function toTask(sTask: STask, day: Moment): Task {
       position: sTask.position,
     },
     id: getId(),
+    wrapper: sTask.wrapper,
   };
 }
 

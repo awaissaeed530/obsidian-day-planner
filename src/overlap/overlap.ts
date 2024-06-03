@@ -122,10 +122,14 @@ export function addHorizontalPlacing(tasks: Task[]) {
     return [];
   }
 
-  const overlapLookup = computeOverlap(tasks);
+  const withoutWrapper = tasks.filter((task) => !task.wrapper);
+
+  const overlapLookup = computeOverlap(withoutWrapper);
 
   return tasks.map((task) => {
     const overlap = overlapLookup.get(task.id);
+
+    if (task.wrapper) return task;
 
     return {
       ...task,
